@@ -1,0 +1,20 @@
+{
+  "name": "chaoyuerender",
+  "version": "0.0.0",
+  "description": "A deferred rendering engine based WebGL",
+  "author": "qige2016 <286882998@qq.com>",
+  "homepage": "https://github.com/chaoyue-WebGL/chaoyueRender-plus#readme",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaoyue-WebGL/chaoyueRender-plus.git",
+    "directory": "packages/chaoyueRender"
+  },
+  "bugs": {
+    "url": "https://github.com/chaoyue-WebGL/chaoyueRender-plus/issues"
+  }
+}
