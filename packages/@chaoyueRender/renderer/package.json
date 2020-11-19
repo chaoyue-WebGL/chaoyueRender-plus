@@ -1,0 +1,21 @@
+{
+  "name": "@chaoyuerender/renderer",
+  "version": "0.0.0",
+  "description": "",
+  "author": "qige2016 <286882998@qq.com>",
+  "homepage": "https://github.com/chaoyue-WebGL/chaoyueRender-plus#readme",
+  "license": "MIT",
+  "main": "dist/renderer.js",
+  "types": "dist/renderer.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaoyue-WebGL/chaoyueRender-plus.git",
+    "directory": "packages/@chaoyuerender/renderer"
+  },
+  "bugs": {
+    "url": "https://github.com/chaoyue-WebGL/chaoyueRender-plus/issues"
+  }
+}
