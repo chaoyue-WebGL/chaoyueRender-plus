@@ -1,1 +1,3 @@
-# `chaoyueRender-plus`
+# chaoyueRender-plus
+
+A deferred rendering engine based WebGL
