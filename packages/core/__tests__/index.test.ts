@@ -1,4 +1,4 @@
-import DummyClass from '../src/core'
+import DummyClass from '../src'
 
 /**
  * Dummy test

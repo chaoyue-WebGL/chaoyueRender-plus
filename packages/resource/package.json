@@ -5,8 +5,8 @@
   "author": "qige2016 <286882998@qq.com>",
   "homepage": "https://github.com/chaoyue-WebGL/chaoyueRender-plus#readme",
   "license": "MIT",
-  "main": "dist/resource.js",
-  "types": "dist/resource.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],

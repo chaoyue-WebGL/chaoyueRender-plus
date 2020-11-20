@@ -1,24 +1,22 @@
 {
   "compilerOptions": {
-    "allowUnreachableCode": true,
+    "baseUrl": ".",
+    "outDir": "dist",
     "strictNullChecks": true,
     "strict": true,
     "esModuleInterop": true,
-    "target": "es5",
-    "module": "commonjs",
+    "target": "esnext",
+    "module": "esnext",
+    "allowJs": false,
     "noImplicitAny": true,
-    "removeComments": true,
-    "preserveConstEnums": false, 
+    "removeComments": false,
     "sourceMap": false,
-    "outDir": "dist",
     "lib": [
       "dom",
       "esnext"
     ],
-    "downlevelIteration": true,
     "declaration": true,
     "moduleResolution": "node",
-    "baseUrl": ".",
     "rootDir": ".",
     "paths": {
       "@chaoyueRender/*": [
