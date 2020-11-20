@@ -1,14 +1,33 @@
 {
   "compilerOptions": {
+    "allowUnreachableCode": true,
+    "strictNullChecks": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "target": "es5",
     "module": "commonjs",
-    "declaration": true,
+    "noImplicitAny": true,
     "removeComments": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "es2018",
+    "preserveConstEnums": false, 
     "sourceMap": false,
     "outDir": "dist",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "downlevelIteration": true,
+    "declaration": true,
+    "moduleResolution": "node",
     "baseUrl": ".",
-    "incremental": true
-  }
+    "rootDir": ".",
+    "paths": {
+      "@chaoyueRender/*": [
+        "packages/*/src"
+      ]
+    }
+  },
+  "include": [
+    "packages/*/src",
+    "packages/*/__tests__"
+  ]
 }
