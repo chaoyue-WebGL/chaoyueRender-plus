@@ -5,30 +5,31 @@ import typescript from 'rollup-plugin-typescript2'
 import json from '@rollup/plugin-json'
 import { terser } from 'rollup-plugin-terser'
 
-function resolveInput(projectDir) {
-  return path.resolve('packages', `${projectDir}/src/index.ts`)
-}
-
-function resolveOnput(projectDir) {
-  return path.resolve('packages', `${projectDir}/dist/index.js`)
-}
-
 const PKG_DIR = process.env.PKG_DIR
-const pkgMeta = require(path.resolve(`packages`, `${PKG_DIR}/package.json`))
+const pkg = require(path.resolve(`packages`, `${PKG_DIR}/package.json`))
 
 export default {
-  input: resolveInput(PKG_DIR),
-  output: {
-    file: resolveOnput(PKG_DIR),
-    format: 'cjs'
-  },
+  input: path.resolve('packages', `${PKG_DIR}/src/index.ts`),
+  output: [
+    {
+      file: path.resolve('packages', `${PKG_DIR}/dist/index.cjs.js`),
+      format: 'cjs',
+      exports: 'named'
+    },
+    {
+      file: path.resolve('packages', `${PKG_DIR}/dist/index.esm.js`),
+      format: 'esm'
+    }
+  ],
   external(id) {
-    return pkgMeta.dependencies && !!pkgMeta.dependencies[id]
+    return pkg.dependencies && !!pkg.dependencies[id]
   },
   plugins: [
     resolve(),
     commonjs(),
-    typescript({ useTsconfigDeclarationDir: true }),
+    typescript({
+      cacheRoot: path.resolve(__dirname, 'node_modules/.rts2_cache')
+    }),
     json(),
     terser()
   ]

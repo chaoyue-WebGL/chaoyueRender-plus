@@ -1,10 +1,10 @@
-const { resolve } = require('path')
+const path = require('path')
 const fs = require('fs-extra')
 const execa = require('execa')
 const dts = require('dts-bundle')
 const chalk = require('chalk')
 
-const packagesDir = resolve('packages')
+const packagesDir = path.resolve('packages')
 const buildTargets = process.argv.slice(2)
 const isBuildAll = buildTargets.length === 0
 
@@ -15,7 +15,7 @@ function logger(msg) {
 async function makeBuild() {
   let files = await fs.readdir(packagesDir)
   files = files.filter((pkgDirName) => {
-    const pkgDir = resolve(packagesDir, pkgDirName)
+    const pkgDir = path.resolve(packagesDir, pkgDirName)
     const stat = fs.statSync(pkgDir)
     const isPkg = stat.isDirectory()
     if (!isPkg) return false
@@ -28,23 +28,19 @@ async function makeBuild() {
   logger(`Start building, Targets: ${files.join(',')}`)
 
   files.forEach(async (pkgDirName) => {
-    const pkgDir = resolve(packagesDir, pkgDirName)
-    const pkgMeta = require(`${pkgDir}/package.json`)
-    if (pkgMeta.private) return
+    const pkgDir = path.resolve(packagesDir, pkgDirName)
+    const pkg = require(`${pkgDir}/package.json`)
+    if (pkg.private) return
     await fs.remove(`${pkgDir}/dist`)
     await execa('rollup', ['-c', '--environment', `PKG_DIR:${pkgDirName}`], {
       stdio: 'inherit'
     })
 
-    const dtsOutDir = `${pkgDir}/${pkgMeta.types}`
-
-    if (pkgMeta.buildOptions.extractDts) {
-      dts.bundle({
-        name: pkgMeta.name,
-        main: `${pkgDir}/dist/packages/${pkgDirName}/src/index.d.ts`,
-        out: dtsOutDir
-      })
-    }
+    dts.bundle({
+      name: pkg.name,
+      main: `${pkgDir}/dist/packages/${pkgDirName}/src/index.d.ts`,
+      out: `${pkgDir}/${pkg.types}`
+    })
     await fs.remove(`${pkgDir}/dist/packages`)
   })
 }

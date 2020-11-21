@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "dist",
     "strictNullChecks": true,
     "strict": true,
     "esModuleInterop": true,
@@ -25,7 +24,6 @@
     }
   },
   "include": [
-    "packages/*/src",
-    "packages/*/__tests__"
+    "packages/*/src"
   ]
 }
