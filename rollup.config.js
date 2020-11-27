@@ -28,7 +28,8 @@ export default {
     resolve(),
     commonjs(),
     typescript({
-      cacheRoot: path.resolve(__dirname, 'node_modules/.rts2_cache')
+      cacheRoot: path.resolve(__dirname, 'node_modules/.rts2_cache'),
+      objectHashIgnoreUnknownHack: true
     }),
     json(),
     terser()

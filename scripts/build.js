@@ -36,12 +36,14 @@ async function makeBuild() {
       stdio: 'inherit'
     })
 
-    dts.bundle({
-      name: pkg.name,
-      main: `${pkgDir}/dist/packages/${pkgDirName}/src/index.d.ts`,
-      out: `${pkgDir}/${pkg.types}`
-    })
-    await fs.remove(`${pkgDir}/dist/packages`)
+    if (pkg.buildOptions.extractDts) {
+      dts.bundle({
+        name: pkg.name,
+        main: `${pkgDir}/dist/packages/${pkgDirName}/src/index.d.ts`,
+        out: `${pkgDir}/${pkg.types}`
+      })
+      await fs.remove(`${pkgDir}/dist/packages`)
+    }
   })
 }
 

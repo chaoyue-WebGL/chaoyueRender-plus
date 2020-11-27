@@ -1,5 +1,5 @@
 {
-  "name": "@chaoyuerender/core",
+  "name": "@chaoyuerender/plugin",
   "version": "0.0.0",
   "description": "",
   "author": "qige2016 <286882998@qq.com>",
@@ -14,7 +14,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chaoyue-WebGL/chaoyueRender-plus.git",
-    "directory": "packages/core"
+    "directory": "packages/plugin"
   },
   "bugs": {
     "url": "https://github.com/chaoyue-WebGL/chaoyueRender-plus/issues"

@@ -5,7 +5,8 @@
   "author": "qige2016 <286882998@qq.com>",
   "homepage": "https://github.com/chaoyue-WebGL/chaoyueRender-plus#readme",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
@@ -13,9 +14,12 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chaoyue-WebGL/chaoyueRender-plus.git",
-    "directory": "packages/@chaoyuerender/resource"
+    "directory": "packages/resource"
   },
   "bugs": {
     "url": "https://github.com/chaoyue-WebGL/chaoyueRender-plus/issues"
+  },
+  "buildOptions": {
+    "extractDts": false
   }
 }
