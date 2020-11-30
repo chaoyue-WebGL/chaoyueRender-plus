@@ -1,5 +1,5 @@
-import { environment } from '@chaoyuerender/utility'
-import SetupWebGL from '@chaoyuerender/renderer/WebGLUtils'
+import { Environment } from '@chaoyuerender/utility'
+import { SetupWebGL } from '@chaoyuerender/resource'
 
 export const defaultGLConfig = {
   isMobile: false,
@@ -35,9 +35,9 @@ export abstract class Viewer {
     }
     const width = this._container.clientWidth
     const height = this._container.clientHeight
-    environment.devicePixelRatio = (window as any).devicePixelRatio
-    const width1 = Math.floor(width * environment.devicePixelRatio)
-    const height1 = Math.floor(height * environment.devicePixelRatio)
+    Environment.devicePixelRatio = (window as any).devicePixelRatio
+    const width1 = Math.floor(width * Environment.devicePixelRatio)
+    const height1 = Math.floor(height * Environment.devicePixelRatio)
     this._canvas.width = width1
     this._canvas.height = height1
     this._canvas.style.width = width + 'px'
@@ -50,8 +50,8 @@ export abstract class Viewer {
     width = width || 1
     height = height || 1
 
-    const actualWidth = Math.floor(width * environment.devicePixelRatio)
-    const actualHeight = Math.floor(height * environment.devicePixelRatio)
+    const actualWidth = Math.floor(width * Environment.devicePixelRatio)
+    const actualHeight = Math.floor(height * Environment.devicePixelRatio)
 
     this._canvas.width = actualWidth
     this._canvas.height = actualHeight
