@@ -19,7 +19,8 @@
   "bugs": {
     "url": "https://github.com/chaoyue-WebGL/chaoyueRender-plus/issues"
   },
-  "buildOptions": {
-    "extractDts": false
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf dist *.tsbuildinfo"
   }
 }

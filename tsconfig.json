@@ -1,29 +1,15 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "strictNullChecks": true,
-    "strict": true,
-    "esModuleInterop": true,
-    "target": "esnext",
-    "module": "esnext",
-    "allowJs": false,
-    "noImplicitAny": true,
-    "removeComments": false,
-    "sourceMap": false,
-    "lib": [
-      "dom",
-      "esnext"
-    ],
-    "declaration": true,
-    "moduleResolution": "node",
-    "rootDir": ".",
-    "paths": {
-      "@chaoyueRender/*": [
-        "packages/*/src"
-      ]
-    }
-  },
-  "include": [
-    "packages/*/src"
-  ]
+  "extends": "./tsconfig.base.json",
+  "references": [
+    { "path": "./packages/api/tsconfig.build.json" },
+    { "path": "./packages/core/tsconfig.build.json" },
+    { "path": "./packages/effect/tsconfig.build.json" },
+    { "path": "./packages/examples/tsconfig.build.json" },
+    { "path": "./packages/loader/tsconfig.build.json" },
+    { "path": "./packages/renderer/tsconfig.build.json" },
+    { "path": "./packages/resource/tsconfig.build.json" },
+    { "path": "./packages/scene/tsconfig.build.json" },
+    { "path": "./packages/utility/tsconfig.build.json" },
+  ],
+  "files": []
 }

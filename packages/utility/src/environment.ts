@@ -1,12 +1,4 @@
-export interface EnvironmentConfig {
-  isMobile?: boolean
-  devicePixelRatio?: number
-  gpuMemory?: number
-  browserName?: string
-  browserVersion?: string
-}
-
-export const environment: EnvironmentConfig = {
+export default {
   isMobile: false,
   devicePixelRatio: 1.0,
   gpuMemory: 512, // in MB
